@@ -4,7 +4,6 @@
 #include "lexer.h"
 #include "cmdline.h"
 #include "prop.h"
-#include "prop.c"
 
 static void parse_rec(Prop *p) {
 
