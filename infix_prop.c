@@ -49,6 +49,84 @@ static Prop parse() {
         parse_token(END);
         return p;
 }
+/*
+static Prop NT_P0(Prop prop) {
+  switch(current){
+  case '(':
+    NT_P3(prop);
+  }
+
+*/
+
+
+Prop parse_p0(Prop* p)
+{
+
+   switch (current) {
+
+  case PAR1:
+    parse_token(PAR1);
+    parse_p3(p);
+    parse_token(PAR2);
+    return p;
+
+  case VAR:
+    *p = var(att);
+    parse_token(VAR);
+
+  case TRUE:
+    *p = true;
+    parse_token(VAR);
+
+  case FALSE:
+    *p = false;
+    parse_token(VAR);
+
+  case NEG:
+    *Prop tmp;
+    parse_token(NEG);
+    parse_p0(p);
+    
+    
+    parse_p3(tmp);
+    *p;
+
+
+  }
+  return p;
+}
+
+Prop parse_p1(Prop p)
+{
+  unexpected(current, att, "while beginning a proposition");
+  return p;
+}
+
+Prop parse_p2(Prop p)
+{
+  return p;
+}
+
+Prop
+
+Prop parse_p3x(Prop p)
+{
+  switch (current) {
+
+  case END:
+  case '(':
+    return p;
+
+  case IMPLIES:
+
+    parse_p3(p);
+    return p;
+
+
+  }
+  return p;
+  
+}
 
 int main(int argc, char *argv[]) {
         run(&parse, "infix", argc, argv);

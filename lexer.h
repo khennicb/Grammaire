@@ -3,7 +3,7 @@
 #ifndef _LEXER_H
 #define _LEXER_H 1
 
-typedef enum { VAR, TRUE, FALSE, NEG, AND, OR, IMPLIES, END } token;
+typedef enum { VAR, TRUE, FALSE, NEG, AND, OR, IMPLIES, END, PAR1, PAR2 } token;
 
 /* next(v) returns the next token of the input stream.
    *v is only modified when the returned token is VAR

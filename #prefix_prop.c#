@@ -14,7 +14,7 @@ static void parse_rec(Prop *p) {
 
         switch (current) {
 /*        case VAR:
-                *p = var(1); // TODO : chercher comment récuperer le nom de la variable ??
+                *p = var(1); // TODO : chercher comment rÃ©cuperer le nom de la variable ??
                 break;
         case TRUE:
                 *p = true;
@@ -59,36 +59,6 @@ int main(int argc, char *argv[]) {
         return 0;
 }
 
-Prop parse_p0(Prop p)
-{
-
-}
-
-Prop parse_p1(Prop p)
-{
-
-}
-
-Prop parse_p2(Prop p)
-{
-
-}
-
-Prop parse_p3(Prop p)
-{
-  switch (current) {
-
-  case EOF:
-  case '(':
-    return p;
-
-  case IMPLIES:
-
-    parse_p3(p);
-    return p;
-
-
-  }
   
 
   
